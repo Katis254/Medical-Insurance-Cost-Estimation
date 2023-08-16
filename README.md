@@ -26,7 +26,39 @@ The project explores the impact of the following factors on insurance costs:
 1. Clone the repository:
 https://github.com/Katis254/Medical-Insurance-Cost-Estimation.git
 
-3. Run the Python script:
+3. Run this Python script:
+# Create the initial variables
+age = 28
+sex = 0  # 0 for female, 1 for male
+bmi = 26.2
+num_of_children = 3
+smoker = 0  # 0 for non-smoker, 1 for smoker
+
+# Insurance estimate formula
+insurance_cost = 250 * age - 128 * sex + 370 * bmi + 425 * num_of_children + 24000 * smoker - 12500
+
+# Display the insurance cost
+print("This person's insurance cost is {} dollars.".format(insurance_cost))
+
+# Age Factor
+age += 4  # Adding 4 years to age
+new_insurance_cost = 250 * age - 128 * sex + 370 * bmi + 425 * num_of_children + 24000 * smoker - 12500
+change_in_insurance_cost = new_insurance_cost - insurance_cost
+print("The change in cost of insurance after increasing the age by 4 years is {} dollars.".format(change_in_insurance_cost))
+
+# BMI Factor
+age = 28  # Resetting age to its original value
+bmi += 3.1  # Adding 3.1 to bmi
+new_insurance_cost = 250 * age - 128 * sex + 370 * bmi + 425 * num_of_children + 24000 * smoker - 12500
+change_in_insurance_cost = new_insurance_cost - insurance_cost
+print("The change in estimated insurance cost after increasing BMI by 3.1 is {} dollars.".format(change_in_insurance_cost))
+
+# Male vs. Female Factor
+bmi = 26.2  # Resetting bmi to its original value
+sex = 1  # Changing sex to male
+new_insurance_cost = 250 * age - 128 * sex + 370 * bmi + 425 * num_of_children + 24000 * smoker - 12500
+change_in_insurance_cost = new_insurance_cost - insurance_cost
+print("The change in estimated cost for being male instead of female is {} dollars.".format(change_in_insurance_cost))
 
 
 4. Observe the estimated insurance costs and changes based on different factors.
